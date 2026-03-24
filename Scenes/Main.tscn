@@ -290,6 +290,7 @@ theme_override_constants/margin_bottom = 200
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -460,7 +461,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1021634001]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -469,10 +469,12 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("11_346fj")
-patch_margin_left = 100
-patch_margin_top = 100
-patch_margin_right = 100
-patch_margin_bottom = 100
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="RepoURL" type="Label" parent="Menu/MenuMargin/OptionsVBox/NinePatchRect" unique_id=274984565]
 layout_mode = 1
