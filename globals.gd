@@ -1,9 +1,9 @@
 extends Node
 
-var fork = "https://github.com/mclemp/MCLEClient/releases/download/"
+var fork = "https://github.com/smartcmd/MinecraftConsoles/releases/download/"
 var forkExeName = "Minecraft.Client.exe"
 var forkZipName = "MCLEWindows64.zip"
-var forkName = "mclemp"
+var forkName = "smartcmd"
 var forkTag = "nightly"
 var justCameFromUpdate = false
 var log = []

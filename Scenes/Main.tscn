@@ -267,7 +267,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="MenuMargin" type="MarginContainer" parent="Menu" unique_id=1468441629]
 layout_mode = 1
@@ -285,13 +284,11 @@ grow_vertical = 2
 theme_override_constants/margin_left = 600
 theme_override_constants/margin_right = 600
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="StartBtn" type="Button" parent="Menu/MenuMargin/MenuVBox" unique_id=989615509]
 layout_mode = 2
@@ -430,7 +427,6 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="BackBtn" type="Button" parent="Menu/MenuMargin/OptionsVBox" unique_id=1767482589]
 layout_mode = 2

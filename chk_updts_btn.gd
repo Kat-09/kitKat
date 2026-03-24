@@ -57,10 +57,9 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 		saveDownloadedHashToFile()
 		$"../../../../AnimationPlayer".play("FadeOut")
 	else:
-		pass
+		enableButtons()
 		$Label.text = "You are already up to date!"
 		$Label.add_theme_color_override("font_color",Color.WHITE)
-		enableButtons()
 		if updateClickCount == 3:
 			$Label.text = "Click me again to force-update!"
 		if updateClickCount >= 4:
