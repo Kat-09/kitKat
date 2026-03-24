@@ -1,0 +1,467 @@
+[gd_scene format=4 uid="uid://cym12j3gk660b"]
+
+[ext_resource type="Texture2D" uid="uid://cgonv423e2a71" path="res://Assets/Menu/Red Hat Man/LargeHatMan.png" id="1_634pj"]
+[ext_resource type="Script" uid="uid://c1yrn5opjaej2" path="res://Scripts/LoadingMenu/loading_screen.gd" id="1_am871"]
+[ext_resource type="Texture2D" uid="uid://cqjl32gld3sic" path="res://Assets/Menu/Red Hat Man/SmallHatMan.png" id="2_am871"]
+[ext_resource type="Texture2D" uid="uid://rhsksaefv16v" path="res://Assets/Menu/Red Hat Man/NoHatMan.png" id="3_6p6t7"]
+[ext_resource type="Texture2D" uid="uid://ckciyqlt4u7k1" path="res://Assets/Menu/Red Hat Man/MediumHatMan.png" id="4_jepyk"]
+[ext_resource type="Script" uid="uid://c5e4hmshpnwja" path="res://Scenes/hat_man.gd" id="5_v15lm"]
+[ext_resource type="Texture2D" uid="uid://7c2rjrtr7yof" path="res://Assets/Menu/Red Hat Man/Bricks.png" id="8_e27xy"]
+[ext_resource type="PackedScene" uid="uid://igp8yjydsb0b" path="res://Scenes/Princess.tscn" id="8_jepyk"]
+[ext_resource type="AudioStream" uid="uid://bpf84a1g3ok8n" path="res://Audio/Downloading.ogg" id="9_634pj"]
+[ext_resource type="FontFile" uid="uid://bfbbusgscsnt3" path="res://Assets/Fonts/Mojang-Regular.ttf" id="9_rmj2b"]
+[ext_resource type="AudioStream" uid="uid://7fuf13omse8f" path="res://Audio/Finish.ogg" id="10_6p6t7"]
+
+[sub_resource type="Animation" id="Animation_6p6t7"]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Downloading:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(4.141059, 1.5587113),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Downloading:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2w5on"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Downloading:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Downloading:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6p6t7"]
+_data = {
+&"FadeOut": SubResource("Animation_6p6t7"),
+&"RESET": SubResource("Animation_2w5on")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tgeq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jepyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p6t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_634pj")
+}],
+"loop": true,
+"name": &"staygrown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_am871")
+}],
+"loop": true,
+"name": &"stayshrunk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am871"]
+size = Vector2(12.25, 30)
+
+[sub_resource type="Animation" id="Animation_davxm"]
+resource_name = "Fall"
+length = 5.9
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-70, 0, 0, 0.2, 115.69338, 1010, -0.7, -1437.5878, 0, 0, 1030.0237, -0.0055555506, -1.067627, 0, 0, 1002.94, -0.00555557, 1.487142, 0, 0, 1026.2001, -0.0055555506, -1.4508667, 0, 0, 998.1605, 0, 0, 0, 0, 1019.8275, -0.0055555506, -0.42484152, 0.011111121, 0.84968454, 1010, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 1.0666667, 1.1, 1.1666666, 1.2666667, 1.3333334, 1.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bricks:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-104, -0.033354938, -1.9006805, 0.13331175, 165.54535, 974, -0.9666667, -1552.6895, 0, 0, 997.413, -0.011111101, -3.9021711, 0, 0, 958.46423, -0.01111114, 6.491465, 0, 0, 988.94586, -0.011111101, -5.0802717, 0, 0, 949.9971, -0.01666665, 5.926992, 0, 0, 979.9143, -0.0055555506, -5.268443, 0, 0, 980, -0.016666692, 3.010539, 0, 0),
+"times": PackedFloat32Array(1, 1.9999784, 2.0666451, 2.1333117, 2.1999784, 2.2999783, 2.3666449, 2.4666452)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Princess:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-224, -0.25, 0, 0.19989252, 299.37622, 860, -1, -1550.9429, 0, 0, 888.4533, -0.047683477, -28.181946, 0, 0, 850.27124, -0.0055555506, 2.4242556, 0, 0, 877.5444, -0.011111101, -5.75764, 0, 0, 846.6348, -0.01666665, 5.1515913, 0, 0, 868.4533, -0.011111101, -2.7273254, 0, 0, 860, -0.016666692, -1.0605978, 0, 0),
+"times": PackedFloat32Array(2, 3, 3.0666666, 3.1333334, 3.2, 3.3, 3.3666666, 3.4666667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HatMan:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-256, -0.25, 0, 0.15352058, 189.409, 828, -0.87268066, -1643.5747, 0, 0, 858.97516, -0.0055555506, -4.8870444, 0, 0, 809.38824, -0.0055555506, 6.611593, 0, 0, 847.4049, -0.011111101, -5.0964355, 0, 0, 806.08246, -0.01111118, 4.132253, 0, 0, 832.5288, -0.011111101, -5.371918, 0, 0, 828, -0.022222202, 0.55096436, 0, 0),
+"times": PackedFloat32Array(3, 4, 4.0666666, 4.133333, 4.2, 4.3, 4.366667, 4.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Thud:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 1.9333334, 2.9333334, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_634pj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-70, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bricks:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-104, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Princess:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-224, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HatMan:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-256, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Thud:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_am871"]
+_data = {
+&"Fall": SubResource("Animation_davxm"),
+&"RESET": SubResource("Animation_634pj")
+}
+
+[sub_resource type="OggPacketSequence" id="OggPacketSequence_25vda"]
+packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAABgD4AAAAAAACAuwAAAAAAAKkB")], [PackedByteArray("A3ZvcmJpcwwAAABMYXZmNjEuMS4xMDAFAAAAHgAAAGVuY29kZXI9TGF2YzYxLjMuMTAwIGxpYnZvcmJpcyYAAABERVNDUklQVElPTj13d3cudGhlbXVzaHJvb21raW5nZG9tLm5ldA8AAABkYXRlPTIwMDYtMTItMjkPAAAAY29kaW5nX2hpc3Rvcnk9EAAAAHRpbWVfcmVmZXJlbmNlPTAB"), PackedByteArray("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")], [PackedByteArray("PDcAeLVPAIDGNV//vnc8xZX33Ej89aYT/SBoz8ltb2JaToLlRGjdhq3lgaUL2LyG7cQ2lxjMTPsby6vIujsk0v/GJ515wh1VRPrRlzOhH0rt4SVu/M8q0rebxGkWmJga"), PackedByteArray("PDnGgG9+MImFscABADTNKndVH8luiRrxoSSS1WtutLfRhifWpvHf3Kjba8OD2eBP0wWpqnIfG4KnbXhNhNtrYqPzgOZ6ohq8Zp+FeCCM81HnYJuXORIvhNF85Dk4gtV1iRckeyxsxAAA"), PackedByteArray("esljFgAUiN74OGUC2tDaiFipOsdsp1i3/fl8iwRZ+3EgwKuF/xO+e3wYpZ6b9p+HCyc+LgdPxJDtqtCDxZV7FnowsfPBawu96OHjQxCiaBmlYIofI/jIDXtfyifSg0crbB7Lj6llnD1fmPJgY+VoKB70cmRHqEyHIM8vGiZb6SJ1CwA="), PackedByteArray("3qkjUikABaI3/gGO2rCAtgnbZp4QdnNo2CWhYTeL0mkF1ZwHr9b2wXSGOXhZqJznthCuE405x1/CSn1ib705ss6cpsnr9KVlwdQOyt4MWNFkgrxU1Zr6gujXsLCqstefzdL7MyVjBUkT6xIm72Gm2dMpJmaYun3t7qoecbqRKgA="), PackedByteArray("XrmjFAAUiN44lYTZgC0B1SKznR2Yb71dQPVLOwnY3vFnYgS/ftKWCULT3YKNWsqjxU/LpFRaKlf9oGwVQUC132E6UYWkB8sv/dq8jeCB8I0DDwQnhXUNGBmu67Cq/QyvFoa32mQe48KwcM8uq7p1vNzSe0ZvKF3zOTdKAA=="), PackedByteArray("PgpkFAAU4KE1AUHbhGO21enI/n91uE7lY0LHaEkZ4elAcy1dvtjedsSKckEVcIzKFge9hGGi9xKFl4trzSLt2YMWRVC/gnNj2+FfFMtNL2ssmztt3RHYwCV6F5CvvjTqx8aJSg9MesLG6voqTbuq1h5eTdP3vQ0B"), PackedByteArray("/vlD2gKgwJJv4OhvhwLgC9omspNdgpTiTV/y67OLSZzSrc/2vf0uT9O5Ahofjwa9eld3VUDN2tGlYYuFk+AlMye/pYxh+2PU4LWf5CgfXE8UlOYrxAim5JkPu8eajsOe6aZ3eOusRmB9yW8Zx7eOTLarNwx8ckCuFlkSAA=="), PackedByteArray("HuojSEsNAgjfMCc6twF6AtXalGwHVKvjs/sycYik+972uhsbCVgst4ankWGcgne7D+UU7JV/+FJWaycfCUvktRNDRPSnmGvl8jr0RsjsuChDhMyM4pDJubHtJdy8Efw6QLzVm6hMv00jzTFK5UqYnJsuP6PGjPwZa2zQAgA="), PackedByteArray("PtmzFAAAwX34TwJaG8UI2zGXacPOdq1AytnSg7f/rxDbeBxJI7ib0bbUe5HADYWtZfKI9Pw4TdebhapS8Rnjw/thKStteWamI7XEGwn7hjERoRLnpWi1ujirgDTEaRbc+Ij5bslo6T1K9uUh96Rdnklxr/phLgA="), PackedByteArray("FrpzEiiOAtGb7fWBBICVqm07u8zBq/dtsMSpdXbeD8ZCH9ZN1Oli9enr6fDWMPNxnXT/0YXPFr/x4xNBDKZOPCE2Q7+Wzjr1eg5m2J7GuGGnlQhMBK29YDVsFXZHkS9h+ky7iPETRbwjSyKjJjI0t472zhnfKmbLcGw5Ir7lfn6q98i0XTwsJNcB"), PackedByteArray("TDt1Em9PAYACpZK2HSzZ+tZFtbCsLr+83Gq6mC87H0Oc2NTJaLN8wiswWkxFwm7kzN/0Ots3Z6Iroqm+WJb1J2wzEz9xFrrgJgA="), PackedByteArray("VDlD4HYAALUpF8veXwh2LlqcdDX31yNGql516o3BsoX7IGjTnON+NBNJX8AAG406v5Vwn9oTVAeeGQHnDS2nc6ue+pBgm6ykuMW4CzgL+qw2iI+58zGwU5efHCp4qC0A"), PackedByteArray("TDV44VcMLAMATdMMp54dXfsZvjjRt3vc9fywPN7aTgdrgkpcWGcGc7CQuB0ntmV22k4xxMmDkiRij7EHNPNy7hflbHfgmTfHnWyAElsuWWISVZl5rpSdvrkd+z8V3/2BZJ+pmQEA"), PackedByteArray("mtorJcEBFPgbCSC4AKrMaludNm0PzF+EQluWZNuTzraRq6TmyZO1QZhUDbbtQ00NulWmkwLkzyH6NgnBEUrjuWxK5K7Mh8AD0KUZ02pznYUaLgnD94suUZXY0OxtosNP5PjerD6ZOY4b0bMTUWY70XLHCRX+pu75WWsP744MDU4e9r4NAA=="), PackedByteArray("XllLMDC1ALgGUKzatm1rT2hXp6cHVxjetl+4np2/oMcnT8Lt/RTB3QFo82yJzov5aXx/0WYMALkv6Z6crdWwmM9LAADM5Ns3ja8XGmcAQAovNC6/+Gap5QMA3L5pfL3QOD81AMALxuUXbZa6fUjhxXXid7CJAA=="), PackedByteArray("3td5uR8GAOw0Akp5JFv/JbYdCVSr8RMKtPtyBatLKlS4h05Jp4Mu9Uu4r445ciBMNFuUwkh2lQV48Nl3sV2BXXs7GHi2iNYzFyr0FsxufUIc62DuoJBZJxDv7EabKwA="), PackedByteArray("Xvj5gAgADprM9kiSLXyVX30XeZYh2+6osqKYPsW5jjomHCteKkgmXo4iuClKApVX4Z39QSWcyQFeGLn6ou2O83ELPSpb6X1GSxWjzTKnFrePLbevldJXi56Xb+m5eAA="), PackedByteArray("3me6t/4ABIRWbNvjmMJ3wtLRapuknzRNjHyb5U73I5DbNU1uP0abWvvUb55nH8dok32aRE3edTLaAqd+TTZWMjpsn2JUgdC2ykkXDfiNtt5pMtoO72ZQltPvp+D6PWoySOK0z6sLbxYQcGnfFm/5HAA=")]])
+granule_positions = PackedInt64Array(0, 0, 7505)
+sampling_rate = 16000.0
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_davxm"]
+packet_sequence = SubResource("OggPacketSequence_25vda")
+tags = {
+"coding_history": "",
+"date": "2006-12-29",
+"description": "www.themushroomkingdom.net",
+"encoder": "Lavc61.3.100 libvorbis",
+"time_reference": "0"
+}
+
+[node name="HatMan" type="Node2D" unique_id=541524854]
+process_mode = 1
+z_index = 4096
+script = ExtResource("1_am871")
+
+[node name="Node" type="Node" parent="." unique_id=583402965]
+
+[node name="FadeOut" type="ColorRect" parent="Node" unique_id=1416549920]
+z_index = 4096
+z_as_relative = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node" unique_id=687503423]
+libraries/ = SubResource("AnimationLibrary_6p6t7")
+
+[node name="HatMan" type="AnimatedSprite2D" parent="." unique_id=325906383]
+process_mode = 3
+position = Vector2(192, -256)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_3tgeq")
+animation = &"staygrown"
+autoplay = "default"
+script = ExtResource("5_v15lm")
+
+[node name="HatManArea2D" type="Area2D" parent="HatMan" unique_id=1908882704]
+
+[node name="HatManCollision2D" type="CollisionShape2D" parent="HatMan/HatManArea2D" unique_id=386451527]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_am871")
+
+[node name="Princess" parent="." unique_id=280175266 instance=ExtResource("8_jepyk")]
+position = Vector2(1788, -224)
+
+[node name="Bricks" type="Sprite2D" parent="." unique_id=1487957658]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(960, -104)
+scale = Vector2(8, 8)
+texture = ExtResource("8_e27xy")
+region_enabled = true
+region_rect = Rect2(0, 0, 240, 7)
+
+[node name="Label" type="Label" parent="." unique_id=1647069930]
+offset_left = 1617.0
+offset_top = -70.0
+offset_right = 1920.0
+offset_bottom = -0.0036621094
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1.92523e-07, 0, 0.58874446, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("9_rmj2b")
+theme_override_font_sizes/font_size = 32
+text = "Downloading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1422113925]
+libraries/ = SubResource("AnimationLibrary_am871")
+autoplay = &"Fall"
+
+[node name="Finish" type="AudioStreamPlayer" parent="." unique_id=490193859]
+stream = ExtResource("10_6p6t7")
+volume_db = -10.342
+
+[node name="Thud" type="AudioStreamPlayer" parent="." unique_id=1420122750]
+stream = SubResource("AudioStreamOggVorbis_davxm")
+volume_db = 8.0
+
+[node name="Downloading" type="AudioStreamPlayer" parent="." unique_id=991194570]
+process_mode = 3
+stream = ExtResource("9_634pj")
+parameters/looping = true
+
+[node name="GameZipDownloader" type="HTTPRequest" parent="." unique_id=833667735]
+use_threads = true
+
+[connection signal="animation_finished" from="Node/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="HatMan" to="HatMan" method="_on_animation_finished"]
+[connection signal="area_entered" from="HatMan/HatManArea2D" to="HatMan" method="_on_hat_man_area_2d_area_entered"]
+[connection signal="area_entered" from="HatMan/HatManArea2D" to="Princess" method="_on_hat_man_area_2d_area_entered"]
+[connection signal="request_completed" from="GameZipDownloader" to="." method="_on_game_zip_downloader_request_completed"]

@@ -1,0 +1,553 @@
+[gd_scene format=3 uid="uid://b2i46equav5t5"]
+
+[ext_resource type="Shader" uid="uid://cenj725y7scep" path="res://Shaders/Blur.gdshader" id="1_grg3l"]
+[ext_resource type="Script" uid="uid://dbjqncypaqnbt" path="res://Scripts/Menu/Main.gd" id="1_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://dddhwppvt1ouy" path="res://Assets/Menu/Title.png" id="2_frkhe"]
+[ext_resource type="Texture2D" uid="uid://0swxx5nba3ss" path="res://Assets/Menu/Buttons/button.png" id="3_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://cjjju1hkxod1f" path="res://Assets/Menu/Buttons/button_highlighted.png" id="4_h1m7h"]
+[ext_resource type="Script" uid="uid://c8kty4q3n84v4" path="res://Scripts/Menu/start_btn.gd" id="5_erwvk"]
+[ext_resource type="FontFile" uid="uid://bfbbusgscsnt3" path="res://Assets/Fonts/Mojang-Regular.ttf" id="6_2w5on"]
+[ext_resource type="Texture2D" uid="uid://bvat682o0ilvt" path="res://Assets/Panorama/panorama0.png" id="7_346fj"]
+[ext_resource type="Script" uid="uid://bsn5ecuehbh0d" path="res://Scripts/Menu/options_btn.gd" id="7_frkhe"]
+[ext_resource type="Texture2D" uid="uid://blwbea2biqw5c" path="res://Assets/Panorama/panorama1.png" id="8_0sclb"]
+[ext_resource type="Script" uid="uid://c3os83fmh366r" path="res://Scripts/Menu/exit_btn.gd" id="8_1p5hy"]
+[ext_resource type="Script" uid="uid://dogrihdcxlepe" path="res://chk_updts_btn.gd" id="8_erwvk"]
+[ext_resource type="Texture2D" uid="uid://x5qnhqgjq84s" path="res://Assets/Panorama/panorama2.png" id="9_sxkr1"]
+[ext_resource type="Texture2D" uid="uid://bd2jlnesdw4ep" path="res://Assets/Panorama/panorama3.png" id="10_fq0cl"]
+[ext_resource type="Texture2D" uid="uid://0oaigkp4styp" path="res://Assets/Panorama/panorama4.png" id="11_hwpts"]
+[ext_resource type="Texture2D" uid="uid://bonm22vstld" path="res://Assets/Panorama/panorama5.png" id="12_jyqft"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkp8b"]
+shader = ExtResource("1_grg3l")
+shader_parameter/blur_amount = 2.90000013775
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03owx"]
+texture = ExtResource("3_1p5hy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20pc6"]
+texture = ExtResource("4_h1m7h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vvyt"]
+texture = ExtResource("4_h1m7h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1m7h"]
+texture = ExtResource("3_1p5hy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6i3y"]
+texture = ExtResource("4_h1m7h")
+
+[sub_resource type="Theme" id="Theme_5vvyt"]
+default_font = ExtResource("6_2w5on")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_erwvk"]
+texture = ExtResource("3_1p5hy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2w5on"]
+texture = ExtResource("3_1p5hy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_346fj"]
+texture = ExtResource("3_1p5hy")
+
+[sub_resource type="Animation" id="Animation_wkp8b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_20pc6"]
+resource_name = "new_animation"
+length = 240.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 240),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 6.2831855, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vvyt"]
+_data = {
+&"RESET": SubResource("Animation_wkp8b"),
+&"new_animation": SubResource("Animation_20pc6")
+}
+
+[sub_resource type="Animation" id="Animation_346fj"]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_erwvk"]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Downloading:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(4.141059, 1.5587113),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Downloading:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2w5on"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Downloading:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Downloading:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_346fj"]
+_data = {
+&"FadeIn": SubResource("Animation_346fj"),
+&"FadeOut": SubResource("Animation_erwvk"),
+&"RESET": SubResource("Animation_2w5on")
+}
+
+[sub_resource type="Animation" id="Animation_0sclb"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxkr1"]
+_data = {
+&"FadeIn": SubResource("Animation_0sclb")
+}
+
+[node name="Main" type="Control" unique_id=1571106329]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_h1m7h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1599819886]
+z_index = -3
+material = SubResource("ShaderMaterial_wkp8b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="FadeOut" type="ColorRect" parent="." unique_id=1260782072]
+z_index = 4096
+z_as_relative = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="TextureRect" parent="." unique_id=232671710]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.99997
+offset_top = 188.00002
+offset_right = 502.0
+offset_bottom = 383.00003
+grow_horizontal = 2
+pivot_offset = Vector2(501.5, 97.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_frkhe")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="Control" parent="." unique_id=933811158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="MenuMargin" type="MarginContainer" parent="Menu" unique_id=1468441629]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9984375
+anchor_top = 0.15
+anchor_right = 1.9984376
+anchor_bottom = 0.9814815
+offset_left = -1917.0
+offset_top = 18.0
+offset_right = -1916.9592
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_right = 600
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="MainMenu" type="Node" parent="Menu/MenuMargin/MenuVBox" unique_id=948659912]
+
+[node name="StartBtn" type="Button" parent="Menu/MenuMargin/MenuVBox/MainMenu" unique_id=989615509]
+offset_left = 600.0
+offset_top = 494.0
+offset_right = 1320.0
+offset_bottom = 550.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_20pc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vvyt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h1m7h")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c6i3y")
+text = " 
+ "
+script = ExtResource("5_erwvk")
+
+[node name="Label" type="Label" parent="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" unique_id=858343084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 28.5)
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChkUpdtsBtn" type="Button" parent="Menu/MenuMargin/MenuVBox/MainMenu" unique_id=1540002477]
+offset_left = 600.0
+offset_top = 566.0
+offset_right = 1320.0
+offset_bottom = 622.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_20pc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vvyt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_erwvk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c6i3y")
+text = " 
+ "
+script = ExtResource("8_erwvk")
+
+[node name="Label" type="Label" parent="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" unique_id=1548340613]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 28.5)
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Check for Updates"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" unique_id=566564180]
+use_threads = true
+timeout = 28.9
+
+[node name="OptionsBtn" type="Button" parent="Menu/MenuMargin/MenuVBox/MainMenu" unique_id=740665237]
+offset_left = 600.0
+offset_top = 638.0
+offset_right = 1320.0
+offset_bottom = 694.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_20pc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vvyt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_2w5on")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c6i3y")
+text = " 
+ "
+script = ExtResource("7_frkhe")
+
+[node name="Label" type="Label" parent="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" unique_id=1136965235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 28.5)
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitBtn" type="Button" parent="Menu/MenuMargin/MenuVBox/MainMenu" unique_id=1332739739]
+offset_left = 600.0
+offset_top = 710.0
+offset_right = 1320.0
+offset_bottom = 766.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_20pc6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vvyt")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_346fj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c6i3y")
+text = " 
+ "
+script = ExtResource("8_1p5hy")
+
+[node name="Label" type="Label" parent="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" unique_id=1838829185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 28.5)
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Exit Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3D" type="Node3D" parent="." unique_id=1298421617]
+
+[node name="Panorama0" type="Sprite3D" parent="3D" unique_id=542911531]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.2712516, -0.0007090308, -0.0020448118)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("7_346fj")
+
+[node name="Panorama1" type="Sprite3D" parent="3D" unique_id=4239807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0070810914, -0.0007090308, -1.2684609)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("8_0sclb")
+
+[node name="Panorama2" type="Sprite3D" parent="3D" unique_id=1758394711]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2674417, -0.003897626, -0.0020448118)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("9_sxkr1")
+
+[node name="Panorama3" type="Sprite3D" parent="3D" unique_id=1710994912]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0.0027186275, -0.0007090308, 1.2764261)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("10_fq0cl")
+
+[node name="Panorama4" type="Sprite3D" parent="3D" unique_id=439340500]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0076033473, 1.2791882, 0.005386576)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("11_hwpts")
+
+[node name="Panorama5" type="Sprite3D" parent="3D" unique_id=1220112912]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -0.011851251, -1.274864, -0.008370984)
+gi_mode = 0
+transparent = false
+double_sided = false
+no_depth_test = true
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("12_jyqft")
+
+[node name="Camera" type="Camera3D" parent="3D" unique_id=1599247847]
+process_priority = -1
+process_physics_priority = -1
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 3
+physics_interpolation_mode = 2
+current = true
+fov = 90.0
+far = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D/Camera" unique_id=888706268]
+physics_interpolation_mode = 2
+libraries/ = SubResource("AnimationLibrary_5vvyt")
+autoplay = &"new_animation"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=98708905]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1280, 720)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1643041928]
+libraries/ = SubResource("AnimationLibrary_346fj")
+libraries/FadeOut2 = SubResource("AnimationLibrary_sxkr1")
+autoplay = &"FadeOut2/FadeIn"
+
+[connection signal="focus_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/StartBtn" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_pressed"]
+[connection signal="request_completed" from="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn/HTTPRequest" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_http_request_request_completed"]
+[connection signal="focus_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/OptionsBtn" method="_on_mouse_exited"]
+[connection signal="focus_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" to="Menu/MenuMargin/MenuVBox/MainMenu/ExitBtn" method="_on_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Menu/MenuMargin/MenuVBox/MainMenu/ChkUpdtsBtn" method="_on_animation_player_animation_finished"]

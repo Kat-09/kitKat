@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b8cu32qre3abk"]
+
+[ext_resource type="Script" uid="uid://bwhrl86gyddyg" path="res://Scenes/evil_fella.gd" id="1_kwi57"]
+[ext_resource type="Texture2D" uid="uid://bss1b71jxxdnb" path="res://Assets/Menu/EvilFella/EvilFella.png" id="2_qowue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p6t7"]
+size = Vector2(14.25, 16.25)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=575028256]
+script = ExtResource("1_kwi57")
+
+[node name="Fella" type="Sprite2D" parent="." unique_id=1530639823]
+position = Vector2(-20, 4)
+texture = ExtResource("2_qowue")
+
+[node name="FellaArea2D" type="Area2D" parent="Fella" unique_id=1611281636]
+
+[node name="FellaCollision2D" type="CollisionShape2D" parent="Fella/FellaArea2D" unique_id=1312411376]
+position = Vector2(-0.25, 0)
+shape = SubResource("RectangleShape2D_6p6t7")
