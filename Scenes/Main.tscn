@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://dogrihdcxlepe" path="res://chk_updts_btn.gd" id="8_erwvk"]
 [ext_resource type="Texture2D" uid="uid://x5qnhqgjq84s" path="res://Assets/Panorama/panorama2.png" id="9_sxkr1"]
 [ext_resource type="Texture2D" uid="uid://bd2jlnesdw4ep" path="res://Assets/Panorama/panorama3.png" id="10_fq0cl"]
+[ext_resource type="Script" uid="uid://b4pwot6far0o" path="res://Scripts/Menu/back.gd" id="11_2w5on"]
 [ext_resource type="Texture2D" uid="uid://0oaigkp4styp" path="res://Assets/Panorama/panorama4.png" id="11_hwpts"]
 [ext_resource type="Texture2D" uid="uid://bonm22vstld" path="res://Assets/Panorama/panorama5.png" id="12_jyqft"]
 
@@ -234,10 +235,12 @@ metadata/_edit_lock_ = true
 z_index = 4096
 z_as_relative = false
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -2671.0002
+offset_top = -1695.0
+offset_right = -751.00024
+offset_bottom = -615.0
+scale = Vector2(4.0758634, 4.5975)
 color = Color(0, 0, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="Logo" type="TextureRect" parent="." unique_id=232671710]
 layout_mode = 1
@@ -429,7 +432,7 @@ theme_override_constants/separation = 16
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="ExitBtn" type="Button" parent="Menu/MenuMargin/OptionsVBox" unique_id=1767482589]
+[node name="BackBtn" type="Button" parent="Menu/MenuMargin/OptionsVBox" unique_id=1767482589]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
@@ -441,9 +444,9 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_346fj")
 theme_override_styles/focus = SubResource("StyleBoxTexture_c6i3y")
 text = " 
  "
-script = ExtResource("8_1p5hy")
+script = ExtResource("11_2w5on")
 
-[node name="Label" type="Label" parent="Menu/MenuMargin/OptionsVBox/ExitBtn" unique_id=1939581456]
+[node name="Label" type="Label" parent="Menu/MenuMargin/OptionsVBox/BackBtn" unique_id=1939581456]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -576,9 +579,8 @@ autoplay = &"FadeOut2/FadeIn"
 [connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_pressed"]
-[connection signal="focus_entered" from="Menu/MenuMargin/OptionsVBox/ExitBtn" to="Menu/MenuMargin/OptionsVBox/ExitBtn" method="_on_focus_entered"]
-[connection signal="focus_exited" from="Menu/MenuMargin/OptionsVBox/ExitBtn" to="Menu/MenuMargin/OptionsVBox/ExitBtn" method="_on_focus_exited"]
-[connection signal="mouse_entered" from="Menu/MenuMargin/OptionsVBox/ExitBtn" to="Menu/MenuMargin/OptionsVBox/ExitBtn" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Menu/MenuMargin/OptionsVBox/ExitBtn" to="Menu/MenuMargin/OptionsVBox/ExitBtn" method="_on_mouse_exited"]
-[connection signal="pressed" from="Menu/MenuMargin/OptionsVBox/ExitBtn" to="Menu/MenuMargin/OptionsVBox/ExitBtn" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_mouse_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Menu/MenuMargin/MenuVBox/ChkUpdtsBtn" method="_on_animation_player_animation_finished"]

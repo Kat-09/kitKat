@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cqjl32gld3sic" path="res://Assets/Menu/Red Hat Man/SmallHatMan.png" id="2_am871"]
 [ext_resource type="Texture2D" uid="uid://rhsksaefv16v" path="res://Assets/Menu/Red Hat Man/NoHatMan.png" id="3_6p6t7"]
 [ext_resource type="Texture2D" uid="uid://ckciyqlt4u7k1" path="res://Assets/Menu/Red Hat Man/MediumHatMan.png" id="4_jepyk"]
-[ext_resource type="Script" uid="uid://c5e4hmshpnwja" path="res://Scenes/hat_man.gd" id="5_v15lm"]
+[ext_resource type="Script" uid="uid://c5e4hmshpnwja" path="res://Scripts/LoadingMenu/hat_man.gd" id="5_v15lm"]
 [ext_resource type="Texture2D" uid="uid://7c2rjrtr7yof" path="res://Assets/Menu/Red Hat Man/Bricks.png" id="8_e27xy"]
 [ext_resource type="PackedScene" uid="uid://igp8yjydsb0b" path="res://Scenes/Princess.tscn" id="8_jepyk"]
 [ext_resource type="AudioStream" uid="uid://bpf84a1g3ok8n" path="res://Audio/Downloading.ogg" id="9_634pj"]
@@ -389,8 +389,11 @@ script = ExtResource("1_am871")
 [node name="FadeOut" type="ColorRect" parent="Node" unique_id=1416549920]
 z_index = 4096
 z_as_relative = false
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -1639.0
+offset_top = -675.0
+offset_right = 281.0
+offset_bottom = 405.0
+scale = Vector2(2.6541195, 2.11341)
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node" unique_id=687503423]

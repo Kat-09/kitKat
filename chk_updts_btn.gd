@@ -55,7 +55,7 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	downloadedhash = hash_file("user://Launcher/Temp/Minecraft.Client.exe")
 	if downloadedhash != loadPreviousHashFromFile():
 		saveDownloadedHashToFile()
-		$"../../../../../AnimationPlayer".play("FadeOut")
+		$"../../../../AnimationPlayer".play("FadeOut")
 	else:
 		pass
 		$Label.text = "You are already up to date!"
@@ -64,7 +64,7 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 		if updateClickCount == 3:
 			$Label.text = "Click me again to force-update!"
 		if updateClickCount >= 4:
-			$"../../../../../AnimationPlayer".play("FadeOut")
+			$"../../../../AnimationPlayer".play("FadeOut")
 
 func loadPreviousHashFromFile():
 	if FileAccess.file_exists("user://Launcher/hash-"+Shitfart.forkName+".txt"):
