@@ -68,6 +68,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_20pc6"]
 resource_name = "new_animation"
 length = 240.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -288,6 +289,7 @@ theme_override_constants/margin_bottom = 200
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -458,7 +460,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1021634001]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -499,7 +500,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "Username:"
 vertical_alignment = 1
 
@@ -519,6 +520,7 @@ theme_override_fonts/font = ExtResource("6_2w5on")
 theme_override_font_sizes/font_size = 15
 placeholder_text = "Enter a Username Here."
 emoji_menu_enabled = false
+tab_input_mode = false
 caret_type = 1
 caret_blink = true
 text_direction = 1
@@ -530,7 +532,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "UID:"
 vertical_alignment = 1
 
@@ -550,6 +552,135 @@ theme_override_fonts/font = ExtResource("6_2w5on")
 theme_override_font_sizes/font_size = 14
 placeholder_text = "Don't change Unless u know what ur doing."
 emoji_menu_enabled = false
+tab_input_mode = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
+
+[node name="ForkNameLbl" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=308696570]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Fork Name:"
+vertical_alignment = 1
+
+[node name="ForkNameEdit" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkNameLbl" unique_id=1585738907]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Fork Name"
+emoji_menu_enabled = false
+tab_input_mode = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
+
+[node name="ForkTagLbl" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=794162154]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Fork Download Tag:"
+vertical_alignment = 1
+
+[node name="ForkTagLbl" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl" unique_id=1016936324]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Fork Download Tag"
+emoji_menu_enabled = false
+tab_input_mode = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
+
+[node name="ForkExeName" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=797307275]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Fork Exe Name:"
+vertical_alignment = 1
+
+[node name="ForkExeName" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName" unique_id=347127825]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Fork Exe Name"
+emoji_menu_enabled = false
+tab_input_mode = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
+
+[node name="ForkZipName" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=1511861250]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Fork Zip Name:"
+vertical_alignment = 1
+
+[node name="ForkZipName" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName" unique_id=1355567520]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Fork Zip Name"
+emoji_menu_enabled = false
+tab_input_mode = false
 caret_type = 1
 caret_blink = true
 text_direction = 1
@@ -714,6 +845,10 @@ autoplay = &"FadeOut2/FadeIn"
 [connection signal="pressed" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_pressed"]
 [connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkNameLbl/ForkNameEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagLbl" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeName" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipName" to="." method="_on_text_edit_text_changed"]
 [connection signal="focus_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_mouse_entered"]

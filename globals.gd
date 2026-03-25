@@ -11,7 +11,6 @@ var launchMethod = ""
 var username = "webKatLauncherUser"
 var uid = "0x" + "BBBBBBBBBBBBBBBB"
 
-
 func _shitFartInit():
 	match OS.get_name():
 		"Windows":
