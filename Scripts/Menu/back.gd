@@ -21,3 +21,7 @@ func _on_pressed() -> void:
 	if disabled == false:
 		$"..".hide()
 		$"../../MenuVBox".show()
+		var file = FileAccess.open("user://Launcher/Game/"+Shitfart.forkName+"/username.txt", FileAccess.WRITE)
+		file.store_string($"../HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit".text)
+		var file2 = FileAccess.open("user://Launcher/Game/"+Shitfart.forkName+"/uid.txt", FileAccess.WRITE)
+		file2.store_string($"../HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit".text)

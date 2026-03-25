@@ -290,6 +290,7 @@ theme_override_constants/margin_bottom = 200
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -460,12 +461,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1021634001]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Menu/MenuMargin/OptionsVBox" unique_id=1071143100]
+[node name="HUD" type="NinePatchRect" parent="Menu/MenuMargin/OptionsVBox" unique_id=1071143100]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("11_346fj")
@@ -476,21 +476,85 @@ patch_margin_bottom = 80
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="RepoURL" type="Label" parent="Menu/MenuMargin/OptionsVBox/NinePatchRect" unique_id=274984565]
+[node name="MarginContainer" type="MarginContainer" parent="Menu/MenuMargin/OptionsVBox/HUD" unique_id=1345769943]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -2.65625
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 3.65625
-offset_top = 42.5
-offset_bottom = -42.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "TEST
-
-
-"
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer" unique_id=262985844]
+layout_mode = 2
+theme_override_constants/separation = 32
+metadata/_edit_use_anchors_ = true
+
+[node name="UsernameLbl" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=276665549]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Username:"
+vertical_alignment = 1
+
+[node name="UsernameEdit" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl" unique_id=362545552]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "Enter a Username Here."
+emoji_menu_enabled = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
+
+[node name="UidLbl" type="Label" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer" unique_id=800457883]
+layout_mode = 2
+theme = SubResource("Theme_5vvyt")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "Username:"
+vertical_alignment = 1
+
+[node name="UidEdit" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl" unique_id=1425693422]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2w5on")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "0xXXXXXXXXXXXXXXXX"
+emoji_menu_enabled = false
+caret_type = 1
+caret_blink = true
+text_direction = 1
 
 [node name="BackBtn" type="Button" parent="Menu/MenuMargin/OptionsVBox" unique_id=1767482589]
 layout_mode = 2
@@ -650,6 +714,8 @@ autoplay = &"FadeOut2/FadeIn"
 [connection signal="mouse_entered" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/MenuMargin/MenuVBox/ExitBtn" to="Menu/MenuMargin/MenuVBox/ExitBtn" method="_on_pressed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="focus_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Menu/MenuMargin/OptionsVBox/BackBtn" to="Menu/MenuMargin/OptionsVBox/BackBtn" method="_on_mouse_entered"]

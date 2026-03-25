@@ -17,3 +17,7 @@ func _ready() -> void:
 		$Menu/MenuMargin/MenuVBox/MultiBtn.disabled = true
 		$Menu/MenuMargin/MenuVBox/MultiBtn.visible = false
 		$Menu/MenuMargin/MenuVBox/ChkUpdtsBtn/Label.text = "Download Game!"
+
+
+func _on_text_edit_text_changed() -> void:
+	Shitfart.username = $Menu/MenuMargin/OptionsVBox/HUD/Username/UsernameEdit.text

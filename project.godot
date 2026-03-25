@@ -54,6 +54,7 @@ enabled=PackedStringArray()
 
 [gui]
 
+fonts/dynamic_fonts/use_oversampling=false
 theme/default_font_antialiasing=0
 theme/default_font_hinting=0
 theme/default_font_subpixel_positioning=0
