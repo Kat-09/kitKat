@@ -20,4 +20,17 @@ func _ready() -> void:
 
 
 func _on_text_edit_text_changed() -> void:
-	Shitfart.username = $Menu/MenuMargin/OptionsVBox/HUD/Username/UsernameEdit.text
+	Shitfart.username = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit.text
+	if Shitfart.uid != "":
+		Shitfart.uid = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text
+		if (FileAccess.file_exists("user://Launcher/Game/"+Shitfart.forkName+"/uid.txt")):
+			var UID = FileAccess.get_file_as_string("user://Launcher/hash-"+Shitfart.forkName+".txt")
+			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text = UID
+			Shitfart.uid = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text
+
+var ascii_letters_and_digits = "ABCDEF0123456789"
+func gen_unique_string(length: int) -> String:
+	var result = ""
+	for i in range(length):
+		result += ascii_letters_and_digits[randi() % ascii_letters_and_digits.length()]
+	return result

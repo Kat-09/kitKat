@@ -290,7 +290,6 @@ theme_override_constants/margin_bottom = 200
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1339386500]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -461,6 +460,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsVBox" type="VBoxContainer" parent="Menu/MenuMargin" unique_id=1021634001]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
@@ -533,7 +533,7 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "Username:"
+text = "UID:"
 vertical_alignment = 1
 
 [node name="UidEdit" type="TextEdit" parent="Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl" unique_id=1425693422]
@@ -550,7 +550,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_2w5on")
 theme_override_font_sizes/font_size = 15
-placeholder_text = "0xXXXXXXXXXXXXXXXX"
+placeholder_text = "Type a 16 Character HEX Value"
 emoji_menu_enabled = false
 caret_type = 1
 caret_blink = true

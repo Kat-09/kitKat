@@ -8,6 +8,9 @@ var forkTag = "nightly"
 var justCameFromUpdate = false
 var log = []
 var launchMethod = ""
+var username = "webKatLauncherUser"
+var uid = "0x" + "BBBBBBBBBBBBBBBB"
+
 
 func _shitFartInit():
 	match OS.get_name():
