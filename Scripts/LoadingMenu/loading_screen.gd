@@ -12,7 +12,7 @@ func _ready() -> void:
 	file.store_string("KLauncherUser")
 	Shitfart.uid = gen_unique_string(16)
 	var file2 = FileAccess.open("user://Launcher/Game/"+Shitfart.forkName+"/uid.dat", FileAccess.WRITE)
-	file2.store_string(Shitfart.username)
+	file2.store_string(Shitfart.uid)
 	
 	req.download_file = "user://Launcher/Temp/Minecraft.Client.zip"
 	req.request(Shitfart.fork + Shitfart.forkTag + "/" + Shitfart.forkZipName)

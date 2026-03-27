@@ -18,27 +18,33 @@ func _process(delta: float) -> void:
 		$Menu/MenuMargin/MenuVBox/Reset/Label.text = "Reset Data?"
 		$Menu/MenuMargin/MenuVBox/Reset.visible = false
 		$Menu/MenuMargin/MenuVBox/Reset.disabled = true
-	
+
+func setGlobalsToLabelEdit():
+	Shitfart.fork = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkLbl/ForkEdit.text
+	Shitfart.forkName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkNameLbl/ForkNameEdit.text
+	Shitfart.forkTag = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit.text
+	Shitfart.forkExeName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit.text
+	Shitfart.forkZipName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit.text
+
 func doStuff():
+	setGlobalsToLabelEdit()
 	var dir = DirAccess.open("user://")
 	if dir.file_exists("user://Launcher/Game/"+Shitfart.forkName+"/username.txt"):
 		$Menu/MenuMargin/MenuVBox/StartBtn.disabled = false
 		$Menu/MenuMargin/MenuVBox/StartBtn.visible = true
 		if (FileAccess.file_exists("user://Launcher/Game/"+Shitfart.forkName+"/username.txt")):
-			var Thing = FileAccess.get_file_as_string("user://Launcher/Game/"+Shitfart.forkName+"/username.txt")
-			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit.text = Thing
-			Shitfart.username = Thing
+			Shitfart.username = FileAccess.get_file_as_string("user://Launcher/Game/"+Shitfart.forkName+"/username.txt")
+			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit.text = Shitfart.username
 		else:
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl/UsernameEdit.text = Shitfart.username
 			var file = FileAccess.open("user://Launcher/Game/"+Shitfart.forkName+"/username.txt", FileAccess.WRITE)
 			file.store_string(Shitfart.username)
 			
 		if (FileAccess.file_exists("user://Launcher/Game/"+Shitfart.forkName+"/uid.dat")):
-			var Thing = FileAccess.get_file_as_string("user://Launcher/Game/"+Shitfart.forkName+"/uid.dat")
-			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text = Thing
-			Shitfart.uid = Thing
+			Shitfart.uid = FileAccess.get_file_as_string("user://Launcher/Game/"+Shitfart.forkName+"/uid.dat")
+			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text = Shitfart.uid
 		else:
-			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text = Shitfart.username
+			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl/UidEdit.text = Shitfart.uid
 			var file = FileAccess.open("user://Launcher/Game/"+Shitfart.forkName+"/uid.dat", FileAccess.WRITE)
 			file.store_string(Shitfart.uid)
 		
@@ -93,10 +99,6 @@ func doStuff():
 		$Menu/MenuMargin/MenuVBox/MultiBtn.visible = false
 		$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UidLbl.visible = false
 		$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/UsernameLbl.visible = false
-		Shitfart.fork = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkLbl/ForkEdit.text
-		Shitfart.forkName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkNameLbl/ForkNameEdit.text
-		Shitfart.forkTag = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit.text
-		Shitfart.forkExeName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit.text
-		Shitfart.forkZipName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit.text
+		setGlobalsToLabelEdit()
 		$Menu/MenuMargin/MenuVBox/ChkUpdtsBtn/Label.text = "Download Game!"
 		
