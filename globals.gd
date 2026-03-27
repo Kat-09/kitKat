@@ -39,6 +39,7 @@ func _getOptionsValues():
 			forkTag = FileAccess.get_file_as_string("user://Launcher/Game/forkTag.txt")
 			forkExeName = FileAccess.get_file_as_string("user://Launcher/Game/forkExeName.txt")
 			forkZipName = FileAccess.get_file_as_string("user://Launcher/Game/forkZipName.txt")
+			launchMethod = FileAccess.get_file_as_string("user://Launcher/Game/launchMethod.txt")
 	else:
 		fork = "https://github.com/smartcmd/MinecraftConsoles/releases/download/"
 		forkExeName = "Minecraft.Client.exe"

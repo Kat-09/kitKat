@@ -25,7 +25,8 @@ func setGlobalsToLabelEdit():
 	globalKLauncher.forkTag = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit.text
 	globalKLauncher.forkExeName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit.text
 	globalKLauncher.forkZipName = $Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit.text
-
+	globalKLauncher.launchMethod = $"Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/Launch Method/LaunchEdit".text
+	
 func doStuff():
 	setGlobalsToLabelEdit()
 	var dir = DirAccess.open("user://")
@@ -74,7 +75,7 @@ func doStuff():
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit.text = globalKLauncher.forkTag
 			var file = FileAccess.open("user://Launcher/Game/forkTag.txt", FileAccess.WRITE)
 			file.store_string(globalKLauncher.forkTag)
-		
+
 		if (FileAccess.file_exists("user://Launcher/Game/forkExeName.txt")):
 			var Thing = FileAccess.get_file_as_string("user://Launcher/Game/forkExeName.txt")
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit.text = Thing
@@ -83,7 +84,7 @@ func doStuff():
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit.text = globalKLauncher.forkExeName
 			var file = FileAccess.open("user://Launcher/Game/forkExeName.txt", FileAccess.WRITE)
 			file.store_string(globalKLauncher.forkExeName)
-				
+
 		if (FileAccess.file_exists("user://Launcher/Game/forkZipName.txt")):
 			var Thing = FileAccess.get_file_as_string("user://Launcher/Game/forkZipName.txt")
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit.text = Thing
@@ -92,6 +93,15 @@ func doStuff():
 			$Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit.text = globalKLauncher.forkZipName
 			var file = FileAccess.open("user://Launcher/Game/forkZipName.txt", FileAccess.WRITE)
 			file.store_string(globalKLauncher.forkZipName)
+
+		if (FileAccess.file_exists("user://Launcher/Game/launchMethod.txt")):
+			var Thing = FileAccess.get_file_as_string("user://Launcher/Game/launchMethod.txt")
+			$"Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/Launch Method/LaunchEdit".text = Thing
+			globalKLauncher.launchMethod = Thing
+		else:
+			$"Menu/MenuMargin/OptionsVBox/HUD/MarginContainer/VBoxContainer/Launch Method/LaunchEdit".text = globalKLauncher.launchMethod
+			var file = FileAccess.open("user://Launcher/Game/forkZipName.txt", FileAccess.WRITE)
+			file.store_string(globalKLauncher.launchMethod)
 	else:
 		$Menu/MenuMargin/MenuVBox/StartBtn.disabled = true
 		$Menu/MenuMargin/MenuVBox/StartBtn.visible = false
