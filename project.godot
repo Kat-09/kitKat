@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Launcher"
+config/name="KLauncher"
+config/description="KLauncher is a launcher for Minecraft: Legacy Edition, made by me."
+config/version="v0.2.1"
 run/main_scene="uid://b2i46equav5t5"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
@@ -18,6 +20,8 @@ boot_splash/bg_color=Color(0.14117648, 0.14117648, 0.14117648, 0)
 boot_splash/show_image=false
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
+boot_splash/image="uid://dh6rv33hw753k"
+config/icon="uid://dh6rv33hw753k"
 
 [audio]
 
@@ -51,7 +55,7 @@ import/atlas_max_width=128
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/remove_directory/plugin.cfg")
+enabled=PackedStringArray("res://addons/appimage-export-main/addons/plugin.cfg", "res://addons/appimage-export-main/plugin.cfg", "res://addons/remove_directory/plugin.cfg")
 
 [gui]
 
