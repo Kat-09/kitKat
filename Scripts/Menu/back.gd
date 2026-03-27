@@ -20,7 +20,7 @@ func _on_focus_exited() -> void:
 func _on_pressed() -> void:
 	if disabled == false:
 		var dir = DirAccess.open("user://")
-		if $"../HUD/MarginContainer/VBoxContainer/ForkLbl/ForkEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkNameLbl/ForkNameEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit".text != "" and $"../HUD/MarginContainer/VBoxContainer/Launch Method/LaunchEdit".text != "":
+		if $"../HUD/MarginContainer/VBoxContainer/ForkLbl/ForkEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkNameLbl/ForkNameEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkTagLbl/ForkTagEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkExeName/ForkExeEdit".text != ""  and $"../HUD/MarginContainer/VBoxContainer/ForkZipName/ForkZipEdit".text != "":
 			$"../../../..".setGlobalsToLabelEdit()
 			dir.make_dir_recursive("user://Launcher/Game/")
 			var file3 = FileAccess.open("user://Launcher/Game/fork.txt", FileAccess.WRITE)

@@ -639,7 +639,6 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_2w5on")
 theme_override_font_sizes/font_size = 14
-text = "wine"
 placeholder_text = "Don't change Unless u know what ur doing."
 emoji_menu_enabled = false
 tab_input_mode = false
