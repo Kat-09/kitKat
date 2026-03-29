@@ -8,11 +8,12 @@ func _ready() -> void:
 	var dir = DirAccess.open("user://")
 	dir.make_dir_recursive("user://Launcher/Game/"+globalKLauncher.forkName)
 	
-	var file = FileAccess.open("user://Launcher/Game/"+globalKLauncher.forkName+"/username.txt", FileAccess.WRITE)
-	file.store_string("KLauncherUser")
-	globalKLauncher.uid = gen_unique_string(16)
-	var file2 = FileAccess.open("user://Launcher/Game/"+globalKLauncher.forkName+"/uid.dat", FileAccess.WRITE)
-	file2.store_string(globalKLauncher.uid)
+	if !FileAccess.file_exists("user://Launcher/Game/"+globalKLauncher.forkName+"/username.txt") or !!FileAccess.file_exists("user://Launcher/Game/"+globalKLauncher.forkName+"/uid.txt"):
+		var file = FileAccess.open("user://Launcher/Game/"+globalKLauncher.forkName+"/username.txt", FileAccess.WRITE)
+		file.store_string("KLauncherUser")
+		globalKLauncher.uid = gen_unique_string(16)
+		var file2 = FileAccess.open("user://Launcher/Game/"+globalKLauncher.forkName+"/uid.dat", FileAccess.WRITE)
+		file2.store_string(globalKLauncher.uid)
 	
 	req.download_file = "user://Launcher/Temp/Minecraft.Client.zip"
 	req.request(globalKLauncher.fork + globalKLauncher.forkTag + "/" + globalKLauncher.forkZipName)
