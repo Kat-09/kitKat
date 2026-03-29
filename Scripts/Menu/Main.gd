@@ -1,7 +1,6 @@
 extends Control
 
-
-#Yes, i am aware my implementation of an options menu is quite slow and kinda bad, but I don't mind as I would just like to get it working for now, I will revamp this at some point, but not yet.
+#Yeah ik my implementation of an options menu is quite sloppy and kinda bad, but I don't mind as I would just like to get it working for now, I will revamp this at some point, but not yet.
 
 func _ready() -> void:
 	globalKLauncher._globalKLauncherInit()
@@ -21,7 +20,6 @@ func music():
 			musicToPlay = AudioStreamOggVorbis.load_from_file("user://Launcher/Music/3.ogg")
 	$Music.stream = musicToPlay
 	$Music.play()
-	
 	
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("shift") and $Menu/MenuMargin/MenuVBox/ChkUpdtsBtn.disabled == false:
@@ -127,8 +125,6 @@ func doStuff():
 		setGlobalsToLabelEdit()
 		$Menu/MenuMargin/MenuVBox/ChkUpdtsBtn.grab_focus()
 		$Menu/MenuMargin/MenuVBox/ChkUpdtsBtn/Label.text = "Download Game!"
-		
-
 
 func onBtnFocusEntered() -> void:
 	$ButtonMove.play()
